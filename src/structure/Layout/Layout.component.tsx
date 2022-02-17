@@ -7,8 +7,14 @@ import './Layout.scss';
 function Layout() {
   return (
     <BrowserRouter>
-      <Nav />
-      <Main />
+      <div className={'container'}>
+        <div className={'Nav'}>
+          <Nav />
+        </div>
+        <div className={'Main'}>
+          <Main />
+        </div>
+      </div>
     </BrowserRouter>
   );
 }
