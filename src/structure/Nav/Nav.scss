@@ -23,7 +23,6 @@
       margin: 0;
       padding: 6px 0;
       line-height: 1;
-      font-family: 'Alata', sans-serif;
       font-weight: 500;
       letter-spacing: 3px;
       text-transform: uppercase;
@@ -33,6 +32,15 @@
     a:hover {
       text-decoration: none;
       color: #f7fffd;
+    }
+
+    &--light {
+      @extend .logo;
+      a,
+      a:hover {
+        text-decoration: none;
+        color: #333;
+      }
     }
   }
 }
@@ -110,6 +118,14 @@
     &:hover:before {
       visibility: visible;
       transform: scaleX(1);
+    }
+  }
+
+  &--light {
+    @extend .nav-menu;
+    a {
+      color: #333;
+      font-weight: 600;
     }
   }
 }
