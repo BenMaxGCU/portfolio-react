@@ -1,7 +1,7 @@
 import { ActionIcon, useMantineColorScheme } from '@mantine/core';
 import { useHotkeys } from '@mantine/hooks';
 import { SunIcon, MoonIcon } from '@modulz/radix-icons';
-import './ColourToggle.module.scss'; 
+import './ColourToggle.module.scss';
 
 function ColourToggle() {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
@@ -11,7 +11,7 @@ function ColourToggle() {
 
   return (
     <ActionIcon
-      variant="outline"
+      variant="transparent"
       color={dark ? 'yellow' : 'blue'}
       onClick={() => toggleColorScheme()}
       title="Toggle color scheme"
