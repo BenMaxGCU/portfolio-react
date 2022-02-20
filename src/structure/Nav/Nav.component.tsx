@@ -5,11 +5,15 @@ import { Link } from 'react-router-dom';
 import ColourToggle from '../../components/utility/ColourToggle/ColourToggle.component';
 import styles from './Nav.module.scss';
 
-function Nav() {
+type NavProps = {
+  visible?: boolean;
+};
+
+function Nav({ visible }: NavProps) {
   const { colorScheme } = useMantineColorScheme();
 
   return (
-    <div className={styles.container}>
+    <div className={visible ? styles.container : styles['container--hidden']}>
       <div
         className={colorScheme === 'dark' ? styles.logo : styles['logo--light']}
       >

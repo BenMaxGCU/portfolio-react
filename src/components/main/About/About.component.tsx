@@ -6,6 +6,7 @@ import IconLinks from './IconLinks/IconLinks.component';
 
 function About() {
   const { colorScheme } = useMantineColorScheme();
+
   return (
     <div
       className={colorScheme === 'dark' ? styles.about : styles['about--light']}
