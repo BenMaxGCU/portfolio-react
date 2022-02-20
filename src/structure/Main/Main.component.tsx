@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Home from '../../components/main/Home/Home.component';
-import './Main.scss';
+import styles from './Main.module.scss';
 
 function Main() {
   return (

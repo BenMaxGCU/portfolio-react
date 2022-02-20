@@ -3,25 +3,29 @@ import { useMantineColorScheme } from '@mantine/core';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ColourToggle from '../../components/utility/ColourToggle/ColourToggle.component';
-import './Nav.scss';
+import styles from './Nav.module.scss';
 
 function Nav() {
   const { colorScheme } = useMantineColorScheme();
 
   return (
-    <div className={'container'}>
-      <div className={colorScheme === 'dark' ? 'logo' : 'logo--light'}>
+    <div className={styles.container}>
+      <div
+        className={colorScheme === 'dark' ? styles.logo : styles['logo--light']}
+      >
         <h1>
           <Link to="/">Ben Maxwell</Link>
         </h1>
       </div>
 
-      <nav className={'nav-menu-container'}>
-        <ul className={colorScheme === 'dark' ? 'nav-menu' : 'nav-menu--light'}>
+      <nav className={styles.navMenuContainer}>
+        <ul
+          className={
+            colorScheme === 'dark' ? styles.navMenu : styles['navMenu--light']
+          }
+        >
           <li>
-            <a>
-              <Link to="/case-studies">Case Studies</Link>
-            </a>
+            <Link to="/case-studies">Case Studies</Link>
           </li>
           <li>
             <a>

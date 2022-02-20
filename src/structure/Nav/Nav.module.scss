@@ -1,19 +1,20 @@
 .container {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
   max-width: 60vw;
 
   padding: 30px 0;
-  height: 92px;
   position: fixed;
   left: 0;
   top: 0;
   right: 0;
   transition: all 0.5s;
   z-index: 997;
+
+  &--hidden {
+    @extend .container;
+    top: -3.125em;
+  }
 
   .logo {
     float: left;
@@ -45,12 +46,12 @@
   }
 }
 
-.nav-menu-container {
+.navMenuContainer {
   float: right;
   margin: 0;
 }
 
-.nav-menu {
+.navMenu {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -93,7 +94,7 @@
     font-size: 0.825rem;
     outline: none;
     margin: 0;
-    color: #fff;
+    color: white;
     letter-spacing: 3px;
 
     &:before {
@@ -122,7 +123,7 @@
   }
 
   &--light {
-    @extend .nav-menu;
+    @extend .navMenu;
     a {
       color: #333;
       font-weight: 600;

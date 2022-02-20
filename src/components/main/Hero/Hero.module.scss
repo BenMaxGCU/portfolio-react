@@ -1,6 +1,6 @@
 .hero {
   width: 100%;
-  height: 70vh;
+  height: 100vh;
   background-size: cover;
   position: relative;
   border-style: none;
@@ -27,7 +27,7 @@
 .hero-container {
   position: absolute;
   bottom: 0;
-  top: 0;
+  top: -10em;
   left: 0;
   right: 0;
   display: flex;

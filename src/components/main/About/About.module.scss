@@ -1,0 +1,38 @@
+.about {
+  background-color: white;
+
+  &--light {
+    background-color: #333;
+  }
+}
+
+.content {
+  max-width: 60vw;
+  align-items: center;
+  padding: 1.875em 0;
+  margin: 0 auto;
+
+  h1 {
+    color: #f67280;
+  }
+
+  h4,
+  li,
+  p {
+    color: #333;
+  }
+
+  p {
+    font-weight: 500;
+  }
+
+  &--light {
+    @extend .content;
+
+    h4,
+    li,
+    p {
+      color: #f7fffd;
+    }
+  }
+}

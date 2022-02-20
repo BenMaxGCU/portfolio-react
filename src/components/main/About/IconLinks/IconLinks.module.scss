@@ -1,0 +1,23 @@
+.icon {
+  float: left;
+  background: transparent;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 50%;
+  border: 2px solid #f67280;
+  padding: 0 0 4px 0;
+
+  i {
+    color: #f67280;
+    font-size: 32px;
+  }
+
+  &:last-child {
+    margin-left: 0.825em;
+  }
+}
