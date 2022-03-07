@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
 import {
-  MantineProvider,
-  ColorSchemeProvider,
   ColorScheme,
+  ColorSchemeProvider,
+  MantineProvider,
 } from '@mantine/core';
-import { useColorScheme } from '@mantine/hooks';
+import React, { useState } from 'react';
+
 import Layout from './structure/Layout/Layout.component';
+import { useColorScheme } from '@mantine/hooks';
 
 function App() {
   // State
@@ -22,7 +23,14 @@ function App() {
       colorScheme={colourScheme}
       toggleColorScheme={toggleColourScheme}
     >
-      <MantineProvider theme={{ colorScheme: colourScheme }} withGlobalStyles>
+      <MantineProvider
+        theme={{
+          colorScheme: colourScheme,
+          fontFamily: 'Alata, sans-serif',
+          headings: { fontFamily: 'Alata, sans-serif' },
+        }}
+        withGlobalStyles
+      >
         <Layout />
       </MantineProvider>
     </ColorSchemeProvider>

@@ -1,8 +1,9 @@
 import { Grid, Image, useMantineColorScheme } from '@mantine/core';
-import React from 'react';
-import styles from './About.module.scss';
+
+import AboutImg from './../../../assets/imgs/about-img.jpg';
 import AboutList from './AboutList/AboutList.component';
 import IconLinks from './IconLinks/IconLinks.component';
+import styles from './About.module.scss';
 
 function About() {
   const { colorScheme } = useMantineColorScheme();
@@ -28,11 +29,7 @@ function About() {
           <IconLinks />
         </Grid.Col>
         <Grid.Col span={6}>
-          <Image
-            radius="md"
-            src="https://i.pinimg.com/474x/f0/94/f9/f094f9bf1ff86bdb51cea95aae0551f6.jpg"
-            alt="About me portrait image"
-          />
+          <Image radius="md" src={AboutImg} alt="About me portrait image" />
         </Grid.Col>
       </Grid>
     </div>

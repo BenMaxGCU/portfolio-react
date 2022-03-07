@@ -1,0 +1,70 @@
+.container {
+  flex: none;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.button {
+  background-color: transparent;
+  border-color: white;
+  border-width: 1px;
+  color: white;
+  cursor: pointer;
+
+  padding-bottom: calc(0.5em - 1px);
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: calc(0.5em - 1px);
+
+  font-size: 1.25rem;
+  height: 2.5em;
+
+  display: inline-flex;
+  box-shadow: none;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: white;
+    border-color: white;
+    color: #0a0a0a;
+  }
+
+  &--light {
+    @extend .button;
+    border-color: #0a0a0a;
+    color: #0a0a0a;
+
+    &:hover {
+      background-color: #0a0a0a;
+      border-color: #0a0a0a;
+      color: white;
+    }
+  }
+}
+
+.header {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.125;
+
+  &--light {
+    @extend .header;
+    color: #0a0a0a;
+  }
+}
+
+.subtitle {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+
+  &--light {
+    @extend .subtitle;
+    color: #0a0a0a;
+  }
+}
