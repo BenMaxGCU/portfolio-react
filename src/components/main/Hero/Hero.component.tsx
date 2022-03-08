@@ -1,5 +1,5 @@
-import React from 'react';
 import { ArrowDownIcon } from '@modulz/radix-icons';
+import React from 'react';
 import styles from './Hero.module.scss';
 
 type HeroProps = {
@@ -15,7 +15,7 @@ function Hero(props: HeroProps) {
         <div className={styles['icon-box']}>
           <div className={styles.icon} onClick={props.scrollToComponent}>
             <ArrowDownIcon
-              style={{ width: 36, height: 36, color: '#f67280' }}
+              style={{ width: 36, height: 36, color: '#C94B62' }}
             />
           </div>
         </div>

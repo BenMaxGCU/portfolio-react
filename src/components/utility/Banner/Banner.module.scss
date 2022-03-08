@@ -1,10 +1,10 @@
 .background {
   background-color: white;
-  height: 18.75em;
+  height: 100%;
 
   &--light {
+    @extend .background;
     background-color: #333;
-    height: 18.75em;
   }
 }
 

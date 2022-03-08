@@ -1,4 +1,5 @@
 import { Grid, List } from '@mantine/core';
+
 import React from 'react';
 import styles from './AboutList.module.scss';
 
@@ -12,7 +13,7 @@ function AboutList() {
             listStyleType={'none'}
             style={{ fontWeight: '600' }}
           >
-            <List.Item style={{ color: '#f67280', fontWeight: '600' }}>
+            <List.Item style={{ color: '#C94B62', fontWeight: '600' }}>
               Languages:{' '}
             </List.Item>
             <List.Item>C#</List.Item>
@@ -32,7 +33,7 @@ function AboutList() {
             listStyleType={'none'}
             style={{ fontWeight: '600' }}
           >
-            <List.Item style={{ color: '#f67280' }}>Frameworks: </List.Item>
+            <List.Item style={{ color: '#C94B62' }}>Frameworks: </List.Item>
             <List.Item>Bootstrap</List.Item>
             <List.Item>.NET MVC</List.Item>
             <List.Item>.NET Core</List.Item>

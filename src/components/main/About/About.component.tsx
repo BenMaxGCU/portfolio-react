@@ -17,7 +17,7 @@ function About() {
           colorScheme === 'dark' ? styles.content : styles['content--light']
         }
       >
-        <Grid.Col span={6}>
+        <Grid.Col md={4} lg={6}>
           <h1>About Me</h1>
           <p>
             Hello, my name is Ben Maxwell. I am a software engineer with
@@ -28,7 +28,7 @@ function About() {
           <AboutList />
           <IconLinks />
         </Grid.Col>
-        <Grid.Col span={6}>
+        <Grid.Col md={4} lg={6}>
           <Image radius="md" src={AboutImg} alt="About me portrait image" />
         </Grid.Col>
       </Grid>
