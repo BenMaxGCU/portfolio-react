@@ -1,7 +1,6 @@
 import { ActionIcon, useMantineColorScheme } from '@mantine/core';
 import { useHotkeys } from '@mantine/hooks';
 import { SunIcon, MoonIcon } from '@modulz/radix-icons';
-import styles from './ColourToggle.module.scss';
 
 function ColourToggle() {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();

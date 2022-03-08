@@ -1,8 +1,5 @@
 import { Grid, List } from '@mantine/core';
 
-import React from 'react';
-import styles from './AboutList.module.scss';
-
 function AboutList() {
   return (
     <>
