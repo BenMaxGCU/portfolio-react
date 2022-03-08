@@ -26,7 +26,16 @@
   justify-content: center;
   white-space: nowrap;
 
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
   &:hover {
+    a {
+      color: #0a0a0a;
+    }
+
     background-color: white;
     border-color: white;
     color: #0a0a0a;
@@ -37,7 +46,15 @@
     border-color: #0a0a0a;
     color: #0a0a0a;
 
+    a {
+      color: #0a0a0a;
+    }
+
     &:hover {
+      a {
+        color: white;
+      }
+
       background-color: #0a0a0a;
       border-color: #0a0a0a;
       color: white;

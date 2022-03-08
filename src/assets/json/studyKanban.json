@@ -1,0 +1,8 @@
+{
+    "id": "studyKanban",
+    "title": "Kanban Board",
+    "desc": "An Angular based Kanban Application",
+    "framework": "Angular",
+    "language": "TypeScript",
+    "about":"This project was created as a way to learn Angular Material for an upcoming project at work.\n\nThe project includes Angular Material components and Angular CDK to allow for an easy to use kanban board that can be used to organise projects and tasks in general.\n\nThe biggest benefit of creating this project was the freedom to experiment with the design and adapt existing components to the sites styling."
+}

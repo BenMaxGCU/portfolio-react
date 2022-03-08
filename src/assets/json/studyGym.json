@@ -1,0 +1,8 @@
+{
+    "id": "studyTesting",
+    "title": "Gym booking and account system",
+    "desc": "A C# based application for a Gym",
+    "framework": "ASP.Net",
+    "language": "C#",
+    "about":"This project was created for my graded unit in my final year of college for my HND, the project brief was to create a website for a Gym that incorporated accounts, a booking system, account system and an admin panel.\n\nThe project achieved an A for the graded unit, the project taught me a lot about time management and working within the agile development methodology.\n\nMy time at college and projects such as my graded unit provided me with a general idea of what it's like to work within the software development industry and provided me with a good practical knowledge of development."
+}

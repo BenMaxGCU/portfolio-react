@@ -1,0 +1,8 @@
+{
+    "id": "studySodoku",
+    "title": "Self-Solving Sodoku",
+    "desc": "A Python based Sodoku Puzzle",
+    "framework": "N/A",
+    "language": "Python",
+    "about":"Before starting my Honours project which would be entirely based in Python, I created a Python Sodoku puzzle that has a self solving function using a back propogation algorithm.\n\nWhen the user presses the space bar, the entire process of solving the grid will be animated and will roughly take about 10 seconds to solve with the animation.\n\nLearning more about Python during this project ended up paying dividends later on in my Honours project where more complicated logic was required in the ML project as I understood how to implement the logic in Python in the same way I could implement it if it was a language that I'm more familiar with such as C# or Java."
+}

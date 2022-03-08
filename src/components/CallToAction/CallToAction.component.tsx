@@ -9,6 +9,8 @@ type CallToActionProps = {
   desc?: string;
   altColour?: boolean;
   buttonLink: string;
+  buttonText?: string;
+  externalLink?: boolean;
 };
 
 function CallToAction({
@@ -16,6 +18,8 @@ function CallToAction({
   desc,
   buttonLink,
   altColour,
+  buttonText = 'View More',
+  externalLink,
 }: CallToActionProps) {
   return (
     <div className={styles.container}>
@@ -33,13 +37,25 @@ function CallToAction({
       </Title>
       <br />
       <p className={styles.paragraph}>
-        <Button
-          component={Link}
-          to={buttonLink}
-          className={altColour ? styles['button--light'] : styles.button}
-        >
-          View More
-        </Button>
+        {externalLink ? (
+          <Button
+            component="a"
+            href={buttonLink}
+            target="_blank"
+            rel="noreferrer"
+            className={altColour ? styles['button--light'] : styles.button}
+          >
+            {buttonText}
+          </Button>
+        ) : (
+          <Button
+            component={Link}
+            to={buttonLink}
+            className={altColour ? styles['button--light'] : styles.button}
+          >
+            {buttonText}
+          </Button>
+        )}
       </p>
     </div>
   );

@@ -1,46 +1,70 @@
-# Getting Started with Create React App
+<!-- Optional Project Header -->
+<div align='center'>
+    <img src='src\assets\imgs\portfolio-logo.png' alt='project_logo' height='100px'>
+    <h3>Personal Portfolio</h3>
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- Table of Contents -->
+<details open>
+    <summary>Table of Contents</summary>
+        <ol>
+            <li>
+            <a href='#about'>About Project</a>
+            </li>
+            <li>
+            <a href='#getting-started'>Get Started</a>
+            <ul>
+                <li><a href='#requirements'>Requirements</a></li>
+                <li><a href='#available-scripts'>Available Scripts</a></li>
+            </ul>
+            </li>
+            <li>
+            <a href='#styling'>Styling</a>
+            </li>
+        </ol>
+</details>
 
-## Available Scripts
+<!-- About Project -->
+## About
 
-In the project directory, you can run:
+This project was created to replace an aging Angular version of my personal portfolio in React.
 
-### `npm start`
+Description:
+The project is using React as it's framework and is using Typescript as the language. Styling is created using CSS Modules and SCSS.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<!-- Getting Started -->
+## Getting Started
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Below contains the basic build steps needed to get this project running and various commands that you can use.
 
-### `npm test`
+### Requirements
+Build Steps (Dev):
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. `yarn`
+2. `yarn start`
 
-### `npm run build`
+Build Steps (Production):
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. `yarn`
+2. `yarn build`
+3. `serve -s build` or deploy using a service like Vercel
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Available Scripts
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Commands;
+- `yarn start`
+Starts the project
+- `yarn build`
+Builds the project
+- `yarn test`
+Test the project (No tests exist currently)
+- `yarn eject`
+Note: this is a one-way operation. Once you eject, you can’t go back!
 
-### `npm run eject`
+If you aren’t satisfied with the build tool and configuration choices, you can eject at any time. This command will remove the single build dependency from your project.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Styling
+This project makes use of SASS and Mantine as the component library.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Documentation for Mantine can be found here:
+[Mantine Documentation](https://mantine.dev/)
