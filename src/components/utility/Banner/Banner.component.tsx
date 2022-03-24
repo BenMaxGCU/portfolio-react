@@ -1,6 +1,6 @@
-import { faFile } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { faFile } from '@fortawesome/free-solid-svg-icons';
 import styles from './Banner.module.scss';
 
 type BannerProps = {
@@ -10,6 +10,7 @@ type BannerProps = {
   buttonText?: string;
   buttonLink?: string;
   buttonDownload?: boolean;
+  buttonDownloadText?: string;
   buttonIcon?: boolean;
 };
 
@@ -20,6 +21,7 @@ function Banner({
   buttonText,
   buttonLink,
   buttonDownload,
+  buttonDownloadText,
   buttonIcon,
 }: BannerProps) {
   return (
@@ -30,7 +32,12 @@ function Banner({
         <h2>{title}</h2>
         <p>{desc}</p>
         {buttonDownload ? (
-          <a href={buttonLink} target="_blank" download rel="noreferrer">
+          <a
+            href={buttonLink}
+            target="_blank"
+            download={buttonDownloadText}
+            rel="noreferrer"
+          >
             {buttonIcon ? (
               <FontAwesomeIcon
                 icon={faFile}

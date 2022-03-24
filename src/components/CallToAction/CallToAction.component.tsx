@@ -11,6 +11,7 @@ type CallToActionProps = {
   buttonLink: string;
   buttonText?: string;
   externalLink?: boolean;
+  hideButton?: boolean;
 };
 
 function CallToAction({
@@ -20,6 +21,7 @@ function CallToAction({
   altColour,
   buttonText = 'View More',
   externalLink,
+  hideButton = false,
 }: CallToActionProps) {
   return (
     <div className={styles.container}>
@@ -36,27 +38,29 @@ function CallToAction({
         {desc}
       </Title>
       <br />
-      <p className={styles.paragraph}>
-        {externalLink ? (
-          <Button
-            component="a"
-            href={buttonLink}
-            target="_blank"
-            rel="noreferrer"
-            className={altColour ? styles['button--light'] : styles.button}
-          >
-            {buttonText}
-          </Button>
-        ) : (
-          <Button
-            component={Link}
-            to={buttonLink}
-            className={altColour ? styles['button--light'] : styles.button}
-          >
-            {buttonText}
-          </Button>
-        )}
-      </p>
+      {!hideButton && (
+        <p className={styles.paragraph}>
+          {externalLink ? (
+            <Button
+              component="a"
+              href={buttonLink}
+              target="_blank"
+              rel="noreferrer"
+              className={altColour ? styles['button--light'] : styles.button}
+            >
+              {buttonText}
+            </Button>
+          ) : (
+            <Button
+              component={Link}
+              to={buttonLink}
+              className={altColour ? styles['button--light'] : styles.button}
+            >
+              {buttonText}
+            </Button>
+          )}
+        </p>
+      )}
     </div>
   );
 }

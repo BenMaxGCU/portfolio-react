@@ -16,9 +16,16 @@ type StudyInfoProps = {
   altColour?: boolean;
   data?: CaseStudyJson;
   image?: string;
+  hideButton?: boolean;
 };
 
-function StudyInfo({ hostedLink, altColour, data, image }: StudyInfoProps) {
+function StudyInfo({
+  hostedLink,
+  altColour,
+  data,
+  image,
+  hideButton,
+}: StudyInfoProps) {
   return (
     <>
       <div className={styles.container}>
@@ -39,6 +46,7 @@ function StudyInfo({ hostedLink, altColour, data, image }: StudyInfoProps) {
               buttonLink={hostedLink ?? ''}
               buttonText={'Visit'}
               altColour={altColour}
+              hideButton={hideButton}
             />
           </Grid.Col>
         </Grid>

@@ -1,9 +1,10 @@
-import { useMantineColorScheme } from '@mantine/core';
 import React, { useRef } from 'react';
-import Footer from '../../../structure/Footer/Footer.component';
-import Banner from '../../utility/Banner/Banner.component';
+
 import About from '../About/About.component';
+import Banner from '../../utility/Banner/Banner.component';
+import Footer from '../../../structure/Footer/Footer.component';
 import Hero from '../Hero/Hero.component';
+import { useMantineColorScheme } from '@mantine/core';
 
 function Home() {
   const { colorScheme } = useMantineColorScheme();
@@ -35,8 +36,9 @@ function Home() {
         desc={'Check out my experience'}
         altColour={colorScheme === 'dark'}
         buttonText={'Download My Resume'}
-        buttonLink={'~/assets/docs/bm-resume.pdf'}
+        buttonLink={require('../../../assets/docs/bm-resume.pdf')}
         buttonDownload={true}
+        buttonDownloadText={'bm-resume.pdf'}
         buttonIcon={true}
       />
       <Footer />

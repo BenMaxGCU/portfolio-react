@@ -3,8 +3,8 @@ import { Grid, List } from '@mantine/core';
 function AboutList() {
   return (
     <>
-      <Grid style={{ marginLeft: '2rem' }}>
-        <Grid.Col span={4}>
+      <Grid gutter={32}>
+        <Grid.Col span={4} offset={1}>
           <List
             size={'lg'}
             listStyleType={'none'}

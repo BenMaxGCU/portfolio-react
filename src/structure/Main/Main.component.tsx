@@ -64,6 +64,7 @@ function Main() {
             image={studySudoku}
             altColour={colorScheme === 'light'}
             hostedLink={''}
+            hideButton={true}
           />
         }
       />
@@ -75,6 +76,7 @@ function Main() {
             image={studyTechreads}
             altColour={colorScheme === 'light'}
             hostedLink={''}
+            hideButton={true}
           />
         }
       />
@@ -86,6 +88,7 @@ function Main() {
             image={studyTesting}
             altColour={colorScheme === 'light'}
             hostedLink={''}
+            hideButton={true}
           />
         }
       />
@@ -97,6 +100,7 @@ function Main() {
             image={studyGym}
             altColour={colorScheme === 'light'}
             hostedLink={''}
+            hideButton={true}
           />
         }
       />
