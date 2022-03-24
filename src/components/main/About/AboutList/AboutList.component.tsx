@@ -5,11 +5,7 @@ function AboutList() {
     <>
       <Grid gutter={32}>
         <Grid.Col span={4} offset={1}>
-          <List
-            size={'lg'}
-            listStyleType={'none'}
-            style={{ fontWeight: '600' }}
-          >
+          <List size={'lg'} listStyleType={'none'}>
             <List.Item style={{ color: '#C94B62', fontWeight: '600' }}>
               Languages:{' '}
             </List.Item>
@@ -25,19 +21,18 @@ function AboutList() {
           </List>
         </Grid.Col>
         <Grid.Col span={4}>
-          <List
-            size={'lg'}
-            listStyleType={'none'}
-            style={{ fontWeight: '600' }}
-          >
-            <List.Item style={{ color: '#C94B62' }}>Frameworks: </List.Item>
-            <List.Item>Bootstrap</List.Item>
+          <List size={'lg'} listStyleType={'none'}>
+            <List.Item style={{ color: '#C94B62', fontWeight: '600' }}>
+              Frameworks:{' '}
+            </List.Item>
             <List.Item>.NET MVC</List.Item>
             <List.Item>.NET Core</List.Item>
+            <List.Item>Spring</List.Item>
             <List.Item>Xamarin</List.Item>
+            <List.Item>React Native</List.Item>
             <List.Item>Angular</List.Item>
             <List.Item>React</List.Item>
-            <List.Item>jQuery</List.Item>
+            <List.Item>Electron</List.Item>
           </List>
         </Grid.Col>
       </Grid>

@@ -1,11 +1,11 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import React from 'react';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './IconLinks.module.scss';
 
 function IconLinks() {
   return (
-    <>
+    <div className={styles.container}>
       <h4>Links:</h4>
       <div>
         <div className={styles.icon}>
@@ -31,7 +31,7 @@ function IconLinks() {
           </a>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

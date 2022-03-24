@@ -28,7 +28,7 @@ function About() {
           <AboutList />
           <IconLinks />
         </Grid.Col>
-        <Grid.Col md={4} lg={6}>
+        <Grid.Col md={7} lg={6}>
           <Image radius="md" src={AboutImg} alt="About me portrait image" />
         </Grid.Col>
       </Grid>
