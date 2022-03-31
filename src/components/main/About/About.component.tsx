@@ -1,7 +1,7 @@
 import { Grid, Image, useMantineColorScheme } from '@mantine/core';
 
-import AboutImg from './../../../assets/imgs/about-img.jpg';
 import AboutList from './AboutList/AboutList.component';
+import { aboutImage } from '../../../assets/imgs';
 import IconLinks from './IconLinks/IconLinks.component';
 import styles from './About.module.scss';
 
@@ -21,15 +21,15 @@ function About() {
           <h1>About Me</h1>
           <p>
             Hello, my name is Ben Maxwell. I am a software engineer with
-            experience in UI design, web development and backend development.
-            Throughout my studies in software engineering I have learned a
-            multitude of languages and frameworks such as:
+            experience in UI design, frontend development and backend
+            development. Throughout my career in software engineering I have
+            learned a multitude of languages and frameworks such as:
           </p>
           <AboutList />
           <IconLinks />
         </Grid.Col>
         <Grid.Col md={7} lg={6}>
-          <Image radius="md" src={AboutImg} alt="About me portrait image" />
+          <Image radius="md" src={aboutImage} alt="About me portrait image" />
         </Grid.Col>
       </Grid>
     </div>

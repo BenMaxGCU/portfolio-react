@@ -1,0 +1,18 @@
+.page {
+    flex-direction: column;
+
+    img {
+        margin-bottom: 2em;
+    }
+
+    h1, h2 {
+        color: #c94b62;
+        margin: 0.5em auto 1em auto;
+        font-weight: 600;
+    }
+
+    p {
+        color: white;
+        margin: 0.625em auto;
+    }
+}

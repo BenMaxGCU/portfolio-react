@@ -26,6 +26,7 @@ import CaseStudies from '../../components/CaseStudies/CaseStudies.component';
 import Home from '../../components/main/Home/Home.component';
 import StudyInfo from '../../components/StudyInfo/StudyInfo.component';
 import { useMantineColorScheme } from '@mantine/core';
+import Blog from '../../components/Blog/Blog.component';
 
 function Main() {
   const { colorScheme } = useMantineColorScheme();
@@ -34,6 +35,7 @@ function Main() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/case-studies" element={<CaseStudies />} />
+      <Route path="/blog" element={<Blog />} />
       <Route
         path="/todo"
         element={

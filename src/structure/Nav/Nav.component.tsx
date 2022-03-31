@@ -32,6 +32,9 @@ function Nav({ visible }: NavProps) {
             <Link to="/case-studies">Case Studies</Link>
           </li>
           <li>
+            <Link to="/blog">Blog</Link>
+          </li>
+          <li>
             <a>
               <ColourToggle />
             </a>
