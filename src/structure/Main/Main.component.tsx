@@ -9,6 +9,7 @@ import {
   sodokuData,
   techreadsData,
   todoData,
+  blogData,
 } from '../../assets/json';
 import {
   studyGhibli,
@@ -27,6 +28,7 @@ import Home from '../../components/main/Home/Home.component';
 import StudyInfo from '../../components/StudyInfo/StudyInfo.component';
 import { useMantineColorScheme } from '@mantine/core';
 import Blog from '../../components/Blog/Blog.component';
+import BlogPage from '../../components/Blog/BlogPage/BlogPage.component';
 
 function Main() {
   const { colorScheme } = useMantineColorScheme();
@@ -139,6 +141,15 @@ function Main() {
           />
         }
       />
+      {blogData.posts.length > 0 &&
+        blogData.posts.map((post) => {
+          return (
+            <Route
+              path={post.routerLink}
+              element={<BlogPage image={post.image} markdown={post.markdown} />}
+            />
+          );
+        })}
     </Routes>
   );
 }

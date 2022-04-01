@@ -7,8 +7,10 @@ import reportingData from './studyTesting.json';
 import sodokuData from './studySodoku.json';
 import techreadsData from './studyTechreads.json';
 import todoData from './studyTodo.json';
+import blogData from './blogData.json';
 
 export {
+    blogData,
     todoData,
     recipeData,
     sodokuData,

@@ -1,0 +1,11 @@
+{
+  "posts": [
+    {
+      "title": "Studio Ghibli App",
+      "desc": "A React based Movie Info Application",
+      "image": "https://www.ghibli.jp/gallery/kazetachinu024.jpg",
+      "routerLink": "/blog/create-ghibli-app",
+      "markdown": "Create a React Studio Ghibli Info app.md"
+    }
+  ]
+}
