@@ -18,6 +18,7 @@ function Blog() {
 
   return (
     <div className={styles.blog}>
+      {/* 
       <div className="blog-post">
         <div className={styles['centre-blog']}>
           <BlogItem title="title" description="desc" />
@@ -31,7 +32,7 @@ function Blog() {
           </Grid.Col>
         </Grid>
       </div>
-      <div style={{ marginTop: '6rem' }} />
+       */}
       <BlogPage image={studyGhibli} markdown={exampleText} />
     </div>
   );
