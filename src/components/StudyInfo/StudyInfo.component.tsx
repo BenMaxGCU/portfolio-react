@@ -1,4 +1,4 @@
-import { Grid, Image, Text, Title } from '@mantine/core';
+import { Center, Grid, Image, Text, Title } from '@mantine/core';
 
 import CallToAction from '../CallToAction/CallToAction.component';
 import styles from './StudyInfo.module.scss';
@@ -17,6 +17,7 @@ type StudyInfoProps = {
   data?: CaseStudyJson;
   image?: string;
   hideButton?: boolean;
+  childComp?: React.ReactNode;
 };
 
 function StudyInfo({
@@ -25,6 +26,7 @@ function StudyInfo({
   data,
   image,
   hideButton,
+  childComp,
 }: StudyInfoProps) {
   return (
     <>
@@ -48,6 +50,7 @@ function StudyInfo({
               altColour={altColour}
               hideButton={hideButton}
             />
+            <Center>{childComp}</Center>
           </Grid.Col>
         </Grid>
 

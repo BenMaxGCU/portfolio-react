@@ -8,6 +8,7 @@ import {
 import {
   studyGhibli,
   studyGym,
+  studyHonours,
   studyKanban,
   studyNasa,
   studyRecipe,
@@ -36,8 +37,14 @@ function CaseStudies() {
         </Title>
       </Center>
       <div className={styles.studies}>
-      <Grid justify="center" align="center" style={{ margin: 0 }}>
+        <Grid justify="center" align="center" style={{ margin: 0 }}>
           <Grid.Col md={5} lg={3}>
+            <Image
+              src={studyHonours}
+              alt="Honours results case study image"
+              height={300}
+              fit="contain"
+            />
           </Grid.Col>
           <Grid.Col md={5} lg={4} offset={1}>
             <CallToAction

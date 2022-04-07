@@ -1,34 +1,44 @@
 .page {
+  flex-direction: column;
+  margin-bottom: 2em;
+
+  img {
+    margin-bottom: 2em;
+  }
+
+  h1,
+  h2 {
+    color: #c94b62;
+    margin: 0.5em auto 1em auto;
+    font-weight: 600;
+  }
+
+  p {
+    color: white;
+    margin: 0.625em auto;
+  }
+
+  a {
+    color: #c94b62;
+  }
+
+  li {
+    color: white;
+    margin-left: 2em;
+  }
+
+  img {
+    display: flex;
     flex-direction: column;
+    margin: auto;
+    border-radius: 0.25em;
+  }
 
-    img {
-        margin-bottom: 2em;
-    }
-
-    h1, h2 {
-        color: #c94b62;
-        margin: 0.5em auto 1em auto;
-        font-weight: 600;
-    }
-
-    p {
-        color: white;
-        margin: 0.625em auto;
-    }
-
-    a {
-        color: #c94b62;
-    }
-
-    li {
-        color: white;
-        margin-left: 2em;
-    }
-
-    img {
-        display: flex;
-        flex-direction: column;
-        margin: auto;
-        border-radius: 0.25em;
-    }
+  code {
+    background-color: #0f0e17;
+    color: #fffffe;
+    border-radius: 0.2em;
+    padding: 0.4em;
+    white-space: nowrap;
+  }
 }

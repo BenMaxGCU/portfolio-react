@@ -1,11 +1,15 @@
-import { Grid } from '@mantine/core';
+import { Center, Grid, Loader } from '@mantine/core';
 import styles from './Blog.module.scss';
 import BlogItem from './BlogItem/BlogItem.component';
 
 import { blogData } from '../../assets/json';
 
 function Blog() {
-  return (
+  return !blogData ? (
+    <Center>
+      <Loader />
+    </Center>
+  ) : (
     <div className={styles.blog}>
       <div className="blog-post">
         <div className={styles['centre-blog']}>

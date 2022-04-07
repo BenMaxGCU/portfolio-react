@@ -8,6 +8,7 @@ import studySudoku from './study3.png';
 import studyTechreads from './study4.png';
 import studyTesting from './study5.png';
 import studyTodo from './study1.png';
+import studyHonours from './honoursstudy.png';
 
 export {
     aboutImage,
@@ -19,5 +20,6 @@ export {
     studySudoku,
     studyTechreads,
     studyTesting,
-    studyGym
+    studyGym,
+    studyHonours
 };

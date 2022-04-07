@@ -1,8 +1,8 @@
 {
   "posts": [
     {
-      "title": "Studio Ghibli App",
-      "desc": "A React based Movie Info Application",
+      "title": "Create a React Studio Ghibli Info app",
+      "desc": "Studio Ghibli has created some of the most awe inspiring and charming films, so let's build an application to display all of their movies",
       "image": "https://www.ghibli.jp/gallery/kazetachinu024.jpg",
       "routerLink": "/blog/create-ghibli-app",
       "markdown": "Create a React Studio Ghibli Info app.md"

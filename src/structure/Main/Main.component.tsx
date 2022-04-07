@@ -15,6 +15,7 @@ import {
 import {
   studyGhibli,
   studyGym,
+  studyHonours,
   studyKanban,
   studyNasa,
   studyRecipe,
@@ -30,6 +31,7 @@ import StudyInfo from '../../components/StudyInfo/StudyInfo.component';
 import { useMantineColorScheme } from '@mantine/core';
 import Blog from '../../components/Blog/Blog.component';
 import BlogPage from '../../components/Blog/BlogPage/BlogPage.component';
+import DownloadButton from '../../components/utility/DownloadButton/DownloadButton.component';
 
 function Main() {
   const { colorScheme } = useMantineColorScheme();
@@ -44,9 +46,17 @@ function Main() {
         element={
           <StudyInfo
             data={honoursData}
+            image={studyHonours}
             altColour={colorScheme === 'light'}
             hostedLink={''}
-            hideButton={true} 
+            hideButton={true}
+            childComp={
+              <DownloadButton
+                buttonText={'Download Dissertation'}
+                buttonLink={require('../../assets/docs/Honours - Final Report (Ben Maxwell).docx')}
+                altColour={colorScheme === 'light'}
+              />
+            }
           />
         }
       />
