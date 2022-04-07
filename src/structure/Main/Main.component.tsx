@@ -10,6 +10,7 @@ import {
   techreadsData,
   todoData,
   blogData,
+  honoursData,
 } from '../../assets/json';
 import {
   studyGhibli,
@@ -38,6 +39,17 @@ function Main() {
       <Route path="/" element={<Home />} />
       <Route path="/case-studies" element={<CaseStudies />} />
       <Route path="/blog" element={<Blog />} />
+      <Route
+        path="/honours"
+        element={
+          <StudyInfo
+            data={honoursData}
+            altColour={colorScheme === 'light'}
+            hostedLink={''}
+            hideButton={true} 
+          />
+        }
+      />
       <Route
         path="/todo"
         element={

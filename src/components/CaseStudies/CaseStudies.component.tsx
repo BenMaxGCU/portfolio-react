@@ -36,6 +36,19 @@ function CaseStudies() {
         </Title>
       </Center>
       <div className={styles.studies}>
+      <Grid justify="center" align="center" style={{ margin: 0 }}>
+          <Grid.Col md={5} lg={3}>
+          </Grid.Col>
+          <Grid.Col md={5} lg={4} offset={1}>
+            <CallToAction
+              title="Crack Detection ML"
+              desc="Neural Network to analyse cracks within concrete structures"
+              buttonLink={'/honours'}
+              altColour={lightColourScheme}
+            />
+          </Grid.Col>
+        </Grid>
+
         <Grid
           justify="center"
           align="center"
