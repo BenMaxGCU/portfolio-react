@@ -1,7 +1,6 @@
 import { Button, Title } from '@mantine/core';
 
 import { Link } from 'react-router-dom';
-import React from 'react';
 import styles from './CallToAction.module.scss';
 
 type CallToActionProps = {

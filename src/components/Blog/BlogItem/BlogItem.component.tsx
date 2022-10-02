@@ -31,7 +31,7 @@ function BlogItem({
       <Grid.Col md={6} lg={5} offset={1}>
         {image && (
           <Link to={routerLink!}>
-            <Image radius={'sm'} src={image} />
+            <Image radius={'sm'} src={image} imageProps={{ loading: 'lazy' }} />
           </Link>
         )}
       </Grid.Col>
@@ -56,7 +56,7 @@ function BlogItem({
     <SimpleGrid cols={1}>
       {image && (
         <Link to={routerLink!}>
-          <Image radius={'sm'} src={image} />
+          <Image radius={'sm'} src={image} imageProps={{ loading: 'lazy' }} />
         </Link>
       )}
       <Title

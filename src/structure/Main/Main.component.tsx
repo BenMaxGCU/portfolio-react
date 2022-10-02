@@ -1,174 +1,80 @@
 import { Route, Routes } from 'react-router-dom';
-import {
-  ghibliData,
-  gymData,
-  kanbanData,
-  nasaData,
-  recipeData,
-  reportingData,
-  sodokuData,
-  techreadsData,
-  todoData,
-  blogData,
-  honoursData,
-} from '../../assets/json';
-import {
-  studyGhibli,
-  studyGym,
-  studyHonours,
-  studyKanban,
-  studyNasa,
-  studyRecipe,
-  studySudoku,
-  studyTechreads,
-  studyTesting,
-  studyTodo,
-} from '../../assets/imgs';
 
 import CaseStudies from '../../components/CaseStudies/CaseStudies.component';
 import Home from '../../components/main/Home/Home.component';
 import StudyInfo from '../../components/StudyInfo/StudyInfo.component';
-import { useMantineColorScheme } from '@mantine/core';
+import { Center, Loader, useMantineColorScheme } from '@mantine/core';
 import Blog from '../../components/Blog/Blog.component';
 import BlogPage from '../../components/Blog/BlogPage/BlogPage.component';
 import DownloadButton from '../../components/utility/DownloadButton/DownloadButton.component';
+import useCaseStudies from '../../components/CaseStudies/apiHooks/useCaseStudies';
+import useBlog from '../../components/Blog/apiHooks/useBlog';
+import getFileUrl from '../../components/CaseStudies/apiHooks/getFileUrl';
 
 function Main() {
+  const { data: caseStudies } = useCaseStudies();
+  const { data: blog_posts } = useBlog();
   const { colorScheme } = useMantineColorScheme();
 
-  return (
+  return !caseStudies || !blog_posts ? (
+    <Center>
+      <Loader />
+    </Center>
+  ) : (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/case-studies" element={<CaseStudies />} />
       <Route path="/blog" element={<Blog />} />
-      <Route
-        path="/honours"
-        element={
-          <StudyInfo
-            data={honoursData}
-            image={studyHonours}
-            altColour={colorScheme === 'light'}
-            hostedLink={''}
-            hideButton={true}
-            childComp={
-              <DownloadButton
-                buttonText={'Download Dissertation'}
-                buttonLink={require('../../assets/docs/Honours - Final Report (Ben Maxwell).docx')}
+      {caseStudies.map((caseStudy) => {
+        return !caseStudy.hasChildComponent ? (
+          <Route
+            key={caseStudy.routerId}
+            path={`/${caseStudy.routerId}`}
+            element={
+              <StudyInfo
+                data={caseStudy}
+                image={getFileUrl(caseStudy, caseStudy.studyImg)}
                 altColour={colorScheme === 'light'}
+                hostedLink={caseStudy.hostedLink}
+                hideButton={caseStudy.hostedLink.length === 0}
               />
             }
           />
-        }
-      />
-      <Route
-        path="/todo"
-        element={
-          <StudyInfo
-            data={todoData}
-            image={studyTodo}
-            altColour={colorScheme === 'light'}
-            hostedLink={'https://todo-list-blond.vercel.app/'}
+        ) : (
+          <Route
+            key={caseStudy.routerId}
+            path={`/${caseStudy.routerId}`}
+            element={
+              <StudyInfo
+                data={caseStudy}
+                image={getFileUrl(caseStudy, caseStudy.studyImg)}
+                altColour={colorScheme === 'light'}
+                hostedLink={caseStudy.hostedLink}
+                hideButton={caseStudy.hostedLink.length === 0}
+                childComp={
+                  <DownloadButton
+                    buttonText={'Download Dissertation'}
+                    buttonLink={require('../../assets/docs/Honours - Final Report (Ben Maxwell).docx')}
+                    altColour={colorScheme === 'light'}
+                  />
+                }
+              />
+            }
           />
-        }
-      />
-      <Route
-        path="/recipes"
-        element={
-          <StudyInfo
-            data={recipeData}
-            image={studyRecipe}
-            altColour={colorScheme === 'light'}
-            hostedLink={'https://recipe-app-eta.vercel.app/'}
-          />
-        }
-      />
-      <Route
-        path="/soduko"
-        element={
-          <StudyInfo
-            data={sodokuData}
-            image={studySudoku}
-            altColour={colorScheme === 'light'}
-            hostedLink={''}
-            hideButton={true}
-          />
-        }
-      />
-      <Route
-        path="/books"
-        element={
-          <StudyInfo
-            data={techreadsData}
-            image={studyTechreads}
-            altColour={colorScheme === 'light'}
-            hostedLink={''}
-            hideButton={true}
-          />
-        }
-      />
-      <Route
-        path="/reporting"
-        element={
-          <StudyInfo
-            data={reportingData}
-            image={studyTesting}
-            altColour={colorScheme === 'light'}
-            hostedLink={''}
-            hideButton={true}
-          />
-        }
-      />
-      <Route
-        path="/gym"
-        element={
-          <StudyInfo
-            data={gymData}
-            image={studyGym}
-            altColour={colorScheme === 'light'}
-            hostedLink={''}
-            hideButton={true}
-          />
-        }
-      />
-      <Route
-        path="/ghibli"
-        element={
-          <StudyInfo
-            data={ghibliData}
-            image={studyGhibli}
-            altColour={colorScheme === 'light'}
-            hostedLink={'https://ghibli-app-three.vercel.app/'}
-          />
-        }
-      />
-      <Route
-        path="/nasa"
-        element={
-          <StudyInfo
-            data={nasaData}
-            image={studyNasa}
-            altColour={colorScheme === 'light'}
-            hostedLink={'https://nasa-rework.vercel.app/'}
-          />
-        }
-      />
-      <Route
-        path="/kanban"
-        element={
-          <StudyInfo
-            data={kanbanData}
-            image={studyKanban}
-            altColour={colorScheme === 'light'}
-            hostedLink={'https://angular-practice-one.vercel.app/'}
-          />
-        }
-      />
-      {blogData.posts.length > 0 &&
-        blogData.posts.map((post) => {
+        );
+      })}
+      {blog_posts.length > 0 &&
+        blog_posts.map((post) => {
           return (
             <Route
-              path={post.routerLink}
-              element={<BlogPage image={post.image} markdown={post.markdown} />}
+              key={post.routerId}
+              path={`/blog/${post.routerId}`}
+              element={
+                <BlogPage
+                  image={getFileUrl(post, post.coverImg)}
+                  markdown={post.markdownText}
+                />
+              }
             />
           );
         })}

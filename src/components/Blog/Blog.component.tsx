@@ -2,10 +2,14 @@ import { Center, Grid, Loader } from '@mantine/core';
 import styles from './Blog.module.scss';
 import BlogItem from './BlogItem/BlogItem.component';
 
-import { blogData } from '../../assets/json';
+import { Record } from 'pocketbase';
+import useBlog from './apiHooks/useBlog';
+import getFileUrl from '../CaseStudies/apiHooks/getFileUrl';
 
 function Blog() {
-  return !blogData ? (
+  const { data: blog_posts } = useBlog();
+
+  return !blog_posts ? (
     <Center>
       <Loader />
     </Center>
@@ -14,29 +18,27 @@ function Blog() {
       <div className="blog-post">
         <div className={styles['centre-blog']}>
           <BlogItem
-            title={blogData.posts[0].title}
-            description={blogData.posts[0].desc}
-            image={blogData.posts[0].image}
-            routerLink={blogData.posts[0].routerLink}
+            title={blog_posts[0].title}
+            description={blog_posts[0].description}
+            image={getFileUrl(blog_posts[0] as Record, blog_posts[0].coverImg)}
+            routerLink={`/blog/${blog_posts[0].routerId}`}
           />
         </div>
-        {blogData.posts.length > 1 && (
+        {blog_posts.length > 1 && (
           <Grid justify={'center'}>
-            {blogData.posts
-              .filter((x, index) => index !== 0)
-              .map((post) => {
-                return (
-                  <Grid.Col md={5} lg={4}>
-                    <BlogItem
-                      title={post.title}
-                      description={post.desc}
-                      image={post.image}
-                      routerLink={post.routerLink}
-                      simpleBlogPost={true}
-                    />
-                  </Grid.Col>
-                );
-              })}
+            {blog_posts.slice(1).map((post) => {
+              return (
+                <Grid.Col key={post.id} md={5} lg={4}>
+                  <BlogItem
+                    title={post.title}
+                    description={post.description}
+                    image={getFileUrl(post, post.coverImg)}
+                    routerLink={`/blog/${post.routerId}`}
+                    simpleBlogPost={true}
+                  />
+                </Grid.Col>
+              );
+            })}
           </Grid>
         )}
       </div>

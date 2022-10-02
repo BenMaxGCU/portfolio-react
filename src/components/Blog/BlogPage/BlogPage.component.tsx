@@ -1,5 +1,10 @@
-import { Image, Container, Center, Loader } from '@mantine/core';
-import { useEffect, useState } from 'react';
+import {
+  Image,
+  Container,
+  Center,
+  Loader,
+  useMantineColorScheme,
+} from '@mantine/core';
 import ReactMarkdown from 'react-markdown';
 import styles from './BlogPage.module.scss';
 
@@ -8,27 +13,30 @@ type BlogPageProps = {
   markdown: string;
 };
 
+function ExternalLink(props: any) {
+  return (
+    <a href={props.href} target="_blank" rel="noreferrer">
+      {props.children}
+    </a>
+  );
+}
+
 function BlogPage({ image, markdown }: BlogPageProps) {
-  const [markdownText, setMarkdownText] = useState('');
+  const { colorScheme } = useMantineColorScheme();
+  const lightColourScheme = colorScheme === 'light';
 
-  useEffect(() => {
-    import(`../../../assets/markdown/notes/${markdown}`)
-      .then((md) => {
-        fetch(md.default)
-          .then((res) => res.text())
-          .then((text) => setMarkdownText(text));
-      })
-      .catch((err) => console.log(err));
-  });
-
-  return !markdownText ? (
+  return !markdown ? (
     <Center>
       <Loader />
     </Center>
   ) : (
-    <Container className={styles.page}>
-      {image && <Image radius={'md'} src={image} />}
-      <ReactMarkdown children={markdownText} />
+    <Container
+      className={lightColourScheme ? styles['page--light'] : styles.page}
+    >
+      {image && (
+        <Image radius={'md'} src={image} imageProps={{ loading: 'lazy' }} />
+      )}
+      <ReactMarkdown components={{ a: ExternalLink }} children={markdown} />
     </Container>
   );
 }

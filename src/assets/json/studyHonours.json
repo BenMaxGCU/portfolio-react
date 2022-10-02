@@ -1,8 +1,0 @@
-{
-  "id": "studyHonours",
-  "title": "Crack Detection ML",
-  "desc": "Neural Network to analyse cracks within concrete structures",
-  "framework": "N/A",
-  "language": "Python",
-  "about": "This project was created for my Honours project at the end of my time at Caledonian University.\n\nThe project focused on creating a neural network that could use image segmentation to detect cracks within concrete structures such as bridges and tunnels.\n\nThe architecture of the NN is based on the U-Net architecture and used the CrackForest dataset, initial results were mediocre but with increased training time I was able to achieve a relatively high accuracy against my test dataset."
-}

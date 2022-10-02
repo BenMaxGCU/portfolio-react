@@ -1,8 +1,0 @@
-{
-    "id": "studyGhibli",
-    "title": "Studio Ghibli App",
-    "desc": "A React based Movie Info Application",
-    "framework": "React",
-    "language": "JavaScript",
-    "about":"This project was created as a fun side project to experiment with various aspects of React development and design.\n\nThe project makes use of a basic API that provides a list of all movies made by Studio Ghibli and in combination with the TMDB API can display more detailed information once the user has selected a movie."
-}

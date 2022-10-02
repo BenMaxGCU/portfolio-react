@@ -34,11 +34,29 @@
     border-radius: 0.25em;
   }
 
+  pre {
+    background-color: #0f0e17;
+    padding: 0.4em;
+    border-radius: 0.2em;
+    max-width: 20vw;
+  }
+
   code {
     background-color: #0f0e17;
     color: #fffffe;
     border-radius: 0.2em;
     padding: 0.4em;
-    white-space: nowrap;
+  }
+
+  &--light {
+    @extend .page;
+
+    p {
+      color: #0f0e17;
+    }
+
+    li {
+      color: #0f0e17;
+    }
   }
 }

@@ -22,8 +22,13 @@ function About() {
           <p>
             Hello, my name is Ben Maxwell. I am a software engineer with
             experience in UI design, frontend development and backend
-            development. Throughout my career in software engineering I have
-            learned a multitude of languages and frameworks such as:
+            development. I am currently working at Arcadis IBI Group and have
+            had great opportunities to work on projects for Transport Scotland,
+            Traffic Scotland and National Transport Authority.
+            <br />
+            <br />
+            Throughout my career in software engineering I have learned a
+            multitude of languages and frameworks such as:
           </p>
           <AboutList />
           <IconLinks />
