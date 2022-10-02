@@ -1,8 +1,0 @@
-{
-    "id": "studyTechreads",
-    "title": "TechReads Book Application",
-    "desc": "A React based application for Book Reviews",
-    "framework": "React",
-    "language": "JavaScript",
-    "about":"This project was created for a University module called 'Client Side Development' which focused around JavaScript and in particular the React framework.\n\nThe application contains a collection of books that have associated reviews and ratings, the application allows users to create a username, create a reading list and have books recommended to them based on the items favourited by the user.\n\nThis project was created as a Single Page application that made heavy use of components, this provided some challenge as I had to think about the reusability of the components and how to structure the interactions between every component which helped to develop my problem solving skills and logic."
-}

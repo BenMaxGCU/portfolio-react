@@ -7,33 +7,37 @@ import React, { useState } from 'react';
 
 import Layout from './structure/Layout/Layout.component';
 import { useColorScheme } from '@mantine/hooks';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 function App() {
   // State
   const preferredColorScheme = useColorScheme();
   const [colourScheme, setColourScheme] =
     useState<ColorScheme>(preferredColorScheme);
+  const client = new QueryClient();
 
   // Functions
   const toggleColourScheme = (value?: ColorScheme) =>
     setColourScheme(value || (colourScheme === 'dark' ? 'light' : 'dark'));
 
   return (
-    <ColorSchemeProvider
-      colorScheme={colourScheme}
-      toggleColorScheme={toggleColourScheme}
-    >
-      <MantineProvider
-        theme={{
-          colorScheme: colourScheme,
-          fontFamily: 'Alata, sans-serif',
-          headings: { fontFamily: 'Alata, sans-serif' },
-        }}
-        withGlobalStyles
+    <QueryClientProvider client={client}>
+      <ColorSchemeProvider
+        colorScheme={colourScheme}
+        toggleColorScheme={toggleColourScheme}
       >
-        <Layout />
-      </MantineProvider>
-    </ColorSchemeProvider>
+        <MantineProvider
+          theme={{
+            colorScheme: colourScheme,
+            fontFamily: 'Alata, sans-serif',
+            headings: { fontFamily: 'Alata, sans-serif' },
+          }}
+          withGlobalStyles
+        >
+          <Layout />
+        </MantineProvider>
+      </ColorSchemeProvider>
+    </QueryClientProvider>
   );
 }
 

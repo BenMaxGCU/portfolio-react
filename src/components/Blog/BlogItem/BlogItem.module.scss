@@ -1,0 +1,30 @@
+.title {
+  color: white;
+  font-size: 2rem;
+  line-height: 1.125;
+  padding-bottom: 0.5em;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  &--light {
+    @extend .title;
+    color: #0a0a0a;
+
+    a {
+      text-decoration: none;
+      color: #0a0a0a;
+    }
+  }
+}
+
+.text {
+  color: white;
+
+  &--light {
+    @extend .text;
+    color: #0a0a0a;
+  }
+}

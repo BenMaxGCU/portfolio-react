@@ -1,8 +1,0 @@
-{
-    "id": "studyTesting",
-    "title": "In-House Testing Report System",
-    "desc": "A C# based application for In-House Testing Reporting",
-    "framework": "ASP.Net",
-    "language": "C#",
-    "about":"This project was created for a University module called 'Secure Software Development', the project revolved around creating a website that could be used by a Testing company to create support tickets within the company infranet which would need to include security to defend against common attacks.\n\nThe application received a high mark and defended against each attack that was tested against it, ASP.Net was chosen due to the ease of adding security features such as XSRF prevention, authentication and authorization.\n\nThis project reinforced why it's important to use good coding practices and implementing security with every project that I develop and reinforced my knowledge of ASP.Net and C#."
-}

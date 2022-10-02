@@ -1,8 +1,0 @@
-{
-    "id": "studyRecipe",
-    "title": "Recipe Application",
-    "desc": "A React based Recipe Search Application",
-    "framework": "React",
-    "language": "JavaScript",
-    "about":"This project was created as a way to learn React during my summer break during my Third year of University. It helped me to learn and develop my skills with both JavaScript and React.\n\nThe application uses the Edamam API which collects a large amount of recipes from around the internet and allows the user to search for tags to find associated recipes.\n\nLearning React and improving my JavaScripts skills over that summer helped me later in a React based module in my final year of University and allowed me to create a high quality project, overall this project has led me to become very competent with React and JavaScript."
-}

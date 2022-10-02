@@ -1,8 +1,0 @@
-{
-    "id": "studyNasa",
-    "title": "Nasa Picture of the Day Application",
-    "desc": "A React based Nasa POD App",
-    "framework": "React",
-    "language": "TypeScript",
-    "about":"This project was created as a fun side project to experiment with various aspects of React development and design.\n\nThe project makes use of the NASI Open API that provides a picture of space for the current day.\n\nThe project was created to include a colour scheme toggle and makes use of Vite to improve performance on an already lightweight application.\n\n I plan to expand on this project with more features in the future."
-}
