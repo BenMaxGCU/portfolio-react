@@ -5,6 +5,7 @@ import {
   Loader,
   useMantineColorScheme,
 } from '@mantine/core';
+import { Prism } from '@mantine/prism';
 import ReactMarkdown from 'react-markdown';
 import styles from './BlogPage.module.scss';
 
@@ -36,7 +37,18 @@ function BlogPage({ image, markdown }: BlogPageProps) {
       {image && (
         <Image radius={'md'} src={image} imageProps={{ loading: 'lazy' }} />
       )}
-      <ReactMarkdown components={{ a: ExternalLink }} children={markdown} />
+      <ReactMarkdown components={{ a: ExternalLink, code({ node, inline, className, children, ...props }) {
+      return !inline ? (
+        <Prism
+          children={String(children).replace(/\n$/, "")}
+          language='jsx'
+          {...props}
+        />
+      ) : (
+        <code className={className} {...props}>
+          {children}
+        </code>
+      )}, }} children={markdown} />
     </Container>
   );
 }
