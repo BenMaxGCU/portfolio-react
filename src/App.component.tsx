@@ -33,6 +33,7 @@ function App() {
             headings: { fontFamily: 'Alata, sans-serif' },
           }}
           withGlobalStyles
+          withNormalizeCSS
         >
           <Layout />
         </MantineProvider>
