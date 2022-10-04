@@ -3,22 +3,29 @@ import {
   ColorSchemeProvider,
   MantineProvider,
 } from '@mantine/core';
-import React, { useState } from 'react';
 
 import Layout from './structure/Layout/Layout.component';
-import { useColorScheme } from '@mantine/hooks';
+import {
+  useColorScheme,
+  useLocalStorageValue,
+  useHotkeys,
+} from '@mantine/hooks';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 function App() {
   // State
   const preferredColorScheme = useColorScheme();
-  const [colourScheme, setColourScheme] =
-    useState<ColorScheme>(preferredColorScheme);
+  const [colourScheme, setColourScheme] = useLocalStorageValue<ColorScheme>({
+    key: 'colour-scheme',
+    defaultValue: preferredColorScheme,
+  });
   const client = new QueryClient();
 
   // Functions
   const toggleColourScheme = (value?: ColorScheme) =>
     setColourScheme(value || (colourScheme === 'dark' ? 'light' : 'dark'));
+
+  useHotkeys([['ctrl+B', () => toggleColourScheme()]]);
 
   return (
     <QueryClientProvider client={client}>
