@@ -7,9 +7,13 @@
     @extend .container;
     max-width: 85vw;
     z-index: 1;
-    
-    h1 {
-      font-size: 1.6rem;
+
+    .logo {
+      @extend .logo;
+
+      h1 {
+        font-size: 1.6rem;
+      }
     }
   }
 
