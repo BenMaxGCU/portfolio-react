@@ -6,7 +6,7 @@
   &--mobile {
     @extend .container;
     max-width: 85vw;
-    z-index: 0;
+    z-index: 1;
   }
 
   padding: 30px 0;
