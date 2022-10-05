@@ -63,9 +63,9 @@ function Nav({ visible }: NavProps) {
     >
       {!opened && (
         <div className={isDarkMode ? styles.logo : styles['logo--light']}>
-          <h2>
+          <h1>
             <Link to="/">Ben Maxwell</Link>
-          </h2>
+          </h1>
         </div>
       )}
       <nav className={styles.navMenuContainer}>
@@ -96,9 +96,9 @@ function Nav({ visible }: NavProps) {
           className={isDarkMode ? styles.mobileNav : styles['mobileNav--light']}
         >
           <div className={isDarkMode ? styles.logo : styles['logo--light']}>
-            <h2>
+            <h1>
               <Link to="/">Ben Maxwell</Link>
-            </h2>
+            </h1>
           </div>
           <li>
             <Link to="/case-studies">Case Studies</Link>
