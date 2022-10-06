@@ -1,8 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Burger, Drawer, useMantineColorScheme } from '@mantine/core';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ColourToggle from '../../components/utility/ColourToggle/ColourToggle.component';
+import useWindowDimension from '../../hooks/useWindowDimension';
 import styles from './Nav.module.scss';
 
 type NavProps = {
@@ -11,21 +12,8 @@ type NavProps = {
 
 function Nav({ visible }: NavProps) {
   const [opened, setOpened] = useState(false);
-  const [windowDimension, setWindowDimension] = useState(null);
+  const windowDimension = useWindowDimension();
   const { colorScheme } = useMantineColorScheme();
-
-  useEffect(() => {
-    setWindowDimension(window.innerWidth);
-  }, []);
-
-  useEffect(() => {
-    function handleResize() {
-      setWindowDimension(window.innerWidth);
-    }
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   const isMobile = windowDimension <= 1040;
   const isDarkMode = colorScheme === 'dark';
@@ -62,7 +50,11 @@ function Nav({ visible }: NavProps) {
       }
     >
       {!opened && (
-        <div className={isDarkMode ? styles.logo : styles['logo--light']}>
+        <div
+          className={
+            isDarkMode ? styles['mobileLogo'] : styles['mobileLogo--light']
+          }
+        >
           <h1>
             <Link to="/">Ben Maxwell</Link>
           </h1>

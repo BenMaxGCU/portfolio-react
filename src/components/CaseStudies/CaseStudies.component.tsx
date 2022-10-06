@@ -12,11 +12,15 @@ import Footer from '../../structure/Footer/Footer.component';
 import styles from './CaseStudies.module.scss';
 import useCaseStudies from './apiHooks/useCaseStudies';
 import getFileUrl from './apiHooks/getFileUrl';
+import useWindowDimension from '../../hooks/useWindowDimension';
 
 function CaseStudies() {
   const { data: caseStudies } = useCaseStudies();
   const { colorScheme } = useMantineColorScheme();
+  const windowDimension = useWindowDimension();
+
   const lightColourScheme = colorScheme === 'light';
+  const isMobile = windowDimension <= 1040;
 
   return !caseStudies ? (
     <Center>
@@ -33,58 +37,86 @@ function CaseStudies() {
         </Title>
       </Center>
       <div className={styles.studies}>
-        {caseStudies.map((caseStudy, index) => {
-          const evenIndex = index % 2 === 0;
-          return evenIndex ? (
-            <Grid
-              key={index}
-              justify="center"
-              align="center"
-              style={{ margin: 0 }}
-            >
-              <Grid.Col md={5} lg={3}>
-                <Image
-                  src={getFileUrl(caseStudy, caseStudy.studyImg)}
-                  alt={`${caseStudy.studyId} image`}
-                  height={300}
-                  fit="contain"
-                />
-              </Grid.Col>
-              <Grid.Col md={5} lg={4} offset={1}>
-                <CallToAction
-                  title={caseStudy.title}
-                  desc={caseStudy.description}
-                  buttonLink={`/${caseStudy.routerId}`}
-                  altColour={lightColourScheme}
-                />
-              </Grid.Col>
-            </Grid>
-          ) : (
-            <Grid
-              key={index}
-              justify="center"
-              align="center"
-              style={{ margin: 0, padding: '3rem 1.5rem' }}
-            >
-              <Grid.Col md={5} lg={4}>
-                <CallToAction
-                  title={caseStudy.title}
-                  desc={caseStudy.description}
-                  buttonLink={`/${caseStudy.routerId}`}
-                  altColour={lightColourScheme}
-                />
-              </Grid.Col>
-              <Grid.Col md={5} lg={3} offset={1}>
-                <Image
-                  src={getFileUrl(caseStudy, caseStudy.studyImg)}
-                  alt={`${caseStudy.studyId} image`}
-                  height={300}
-                  fit="contain"
-                />
-              </Grid.Col>
-            </Grid>
-          );
-        })}
+        {!isMobile
+          ? caseStudies.map((caseStudy, index) => {
+              const evenIndex = index % 2 === 0;
+              return evenIndex ? (
+                <Grid
+                  key={index}
+                  justify="center"
+                  align="center"
+                  style={{ margin: 0 }}
+                >
+                  <Grid.Col md={5} lg={3}>
+                    <Image
+                      src={getFileUrl(caseStudy, caseStudy.studyImg)}
+                      alt={`${caseStudy.studyId} image`}
+                      height={300}
+                      fit="contain"
+                    />
+                  </Grid.Col>
+                  <Grid.Col md={5} lg={4} offset={1}>
+                    <CallToAction
+                      title={caseStudy.title}
+                      desc={caseStudy.description}
+                      buttonLink={`/${caseStudy.routerId}`}
+                      altColour={lightColourScheme}
+                    />
+                  </Grid.Col>
+                </Grid>
+              ) : (
+                <Grid
+                  key={index}
+                  justify="center"
+                  align="center"
+                  style={{ margin: 0, padding: '3rem 1.5rem' }}
+                >
+                  <Grid.Col md={5} lg={4}>
+                    <CallToAction
+                      title={caseStudy.title}
+                      desc={caseStudy.description}
+                      buttonLink={`/${caseStudy.routerId}`}
+                      altColour={lightColourScheme}
+                    />
+                  </Grid.Col>
+                  <Grid.Col md={5} lg={3} offset={1}>
+                    <Image
+                      src={getFileUrl(caseStudy, caseStudy.studyImg)}
+                      alt={`${caseStudy.studyId} image`}
+                      height={300}
+                      fit="contain"
+                    />
+                  </Grid.Col>
+                </Grid>
+              );
+            })
+          : caseStudies.map((caseStudy, index) => {
+              return (
+                <Grid
+                  key={index}
+                  justify="center"
+                  align="center"
+                  style={{ margin: 0 }}
+                >
+                  <Grid.Col md={5} lg={3}>
+                    <Image
+                      src={getFileUrl(caseStudy, caseStudy.studyImg)}
+                      alt={`${caseStudy.studyId} image`}
+                      height={300}
+                      fit="contain"
+                    />
+                  </Grid.Col>
+                  <Grid.Col md={5} lg={4} offset={1}>
+                    <CallToAction
+                      title={caseStudy.title}
+                      desc={caseStudy.description}
+                      buttonLink={`/${caseStudy.routerId}`}
+                      altColour={lightColourScheme}
+                    />
+                  </Grid.Col>
+                </Grid>
+              );
+            })}
       </div>
       <Footer />
     </div>
