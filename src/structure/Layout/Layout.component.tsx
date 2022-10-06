@@ -12,8 +12,7 @@ function Layout() {
 
   useEffect(() => {
     const currentScrollPos = scroll.y;
-    const visible =
-      prevScrollpos.current >= currentScrollPos ?? currentScrollPos === 0;
+    const visible = prevScrollpos.current >= currentScrollPos;
 
     prevScrollpos.current = currentScrollPos;
     setVisible(visible);
