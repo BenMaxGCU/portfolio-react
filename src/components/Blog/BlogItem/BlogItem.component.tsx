@@ -7,6 +7,7 @@ import {
   SimpleGrid,
 } from '@mantine/core';
 import { Link } from 'react-router-dom';
+import useWindowDimension from '../../../hooks/useWindowDimension';
 import styles from './BlogItem.module.scss';
 
 type BlogItemProps = {
@@ -25,10 +26,13 @@ function BlogItem({
   simpleBlogPost,
 }: BlogItemProps) {
   const { colorScheme } = useMantineColorScheme();
+  const windowDimension = useWindowDimension();
+
+  const isMobile = windowDimension <= 1040;
 
   return !simpleBlogPost ? (
     <Grid justify={'center'}>
-      <Grid.Col md={6} lg={5} offset={1}>
+      <Grid.Col md={6} lg={5} offset={isMobile ? 0 : 1}>
         {image && (
           <Link to={routerLink!}>
             <Image radius={'sm'} src={image} imageProps={{ loading: 'lazy' }} />
