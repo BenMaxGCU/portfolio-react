@@ -1,16 +1,19 @@
 import {
-  Image,
-  Container,
   Center,
+  Container,
+  Image,
   Loader,
   useMantineColorScheme,
 } from '@mantine/core';
+
 import { Prism } from '@mantine/prism';
 import ReactMarkdown from 'react-markdown';
 import styles from './BlogPage.module.scss';
+import { useDocumentTitle } from '@mantine/hooks';
 
 type BlogPageProps = {
   image?: string;
+  title: string;
   markdown: string;
 };
 
@@ -22,9 +25,10 @@ function ExternalLink(props: any) {
   );
 }
 
-function BlogPage({ image, markdown }: BlogPageProps) {
+function BlogPage({ image, title, markdown }: BlogPageProps) {
   const { colorScheme } = useMantineColorScheme();
   const lightColourScheme = colorScheme === 'light';
+  useDocumentTitle(`${title} ✨ Ben Maxwell`);
 
   return !markdown ? (
     <Center>
@@ -37,18 +41,25 @@ function BlogPage({ image, markdown }: BlogPageProps) {
       {image && (
         <Image radius={'md'} src={image} imageProps={{ loading: 'lazy' }} />
       )}
-      <ReactMarkdown components={{ a: ExternalLink, code({ node, inline, className, children, ...props }) {
-      return !inline ? (
-        <Prism
-          children={String(children).replace(/\n$/, "")}
-          language='jsx'
-          {...props}
-        />
-      ) : (
-        <code className={className} {...props}>
-          {children}
-        </code>
-      )}, }} children={markdown} />
+      <ReactMarkdown
+        components={{
+          a: ExternalLink,
+          code({ node, inline, className, children, ...props }) {
+            return !inline ? (
+              <Prism
+                children={String(children).replace(/\n$/, '')}
+                language="jsx"
+                {...props}
+              />
+            ) : (
+              <code className={className} {...props}>
+                {children}
+              </code>
+            );
+          },
+        }}
+        children={markdown}
+      />
     </Container>
   );
 }
