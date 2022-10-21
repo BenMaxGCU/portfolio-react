@@ -1,15 +1,15 @@
+import { Center, Loader, useMantineColorScheme } from '@mantine/core';
 import { Route, Routes } from 'react-router-dom';
 
-import CaseStudies from '../../components/CaseStudies/CaseStudies.component';
-import Home from '../../components/main/Home/Home.component';
-import StudyInfo from '../../components/StudyInfo/StudyInfo.component';
-import { Center, Loader, useMantineColorScheme } from '@mantine/core';
 import Blog from '../../components/Blog/Blog.component';
 import BlogPage from '../../components/Blog/BlogPage/BlogPage.component';
+import CaseStudies from '../../components/CaseStudies/CaseStudies.component';
 import DownloadButton from '../../components/utility/DownloadButton/DownloadButton.component';
-import useCaseStudies from '../../components/CaseStudies/apiHooks/useCaseStudies';
-import useBlog from '../../components/Blog/apiHooks/useBlog';
+import Home from '../../components/main/Home/Home.component';
+import StudyInfo from '../../components/StudyInfo/StudyInfo.component';
 import getFileUrl from '../../components/CaseStudies/apiHooks/getFileUrl';
+import useBlog from '../../components/Blog/apiHooks/useBlog';
+import useCaseStudies from '../../components/CaseStudies/apiHooks/useCaseStudies';
 
 function Main() {
   const { data: caseStudies } = useCaseStudies();
@@ -72,6 +72,7 @@ function Main() {
               element={
                 <BlogPage
                   image={getFileUrl(post, post.coverImg)}
+                  title={post.title}
                   markdown={post.markdownText}
                 />
               }

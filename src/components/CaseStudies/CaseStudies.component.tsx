@@ -9,15 +9,17 @@ import {
 
 import CallToAction from '../CallToAction/CallToAction.component';
 import Footer from '../../structure/Footer/Footer.component';
+import getFileUrl from './apiHooks/getFileUrl';
 import styles from './CaseStudies.module.scss';
 import useCaseStudies from './apiHooks/useCaseStudies';
-import getFileUrl from './apiHooks/getFileUrl';
+import { useDocumentTitle } from '@mantine/hooks';
 import useWindowDimension from '../../hooks/useWindowDimension';
 
 function CaseStudies() {
   const { data: caseStudies } = useCaseStudies();
   const { colorScheme } = useMantineColorScheme();
   const windowDimension = useWindowDimension();
+  useDocumentTitle('Case Studies ✨ Ben Maxwell');
 
   const lightColourScheme = colorScheme === 'light';
   const isMobile = windowDimension <= 1040;

@@ -1,13 +1,15 @@
 import { Center, Grid, Loader } from '@mantine/core';
-import styles from './Blog.module.scss';
-import BlogItem from './BlogItem/BlogItem.component';
 
+import BlogItem from './BlogItem/BlogItem.component';
 import { Record } from 'pocketbase';
-import useBlog from './apiHooks/useBlog';
 import getFileUrl from '../CaseStudies/apiHooks/getFileUrl';
+import styles from './Blog.module.scss';
+import useBlog from './apiHooks/useBlog';
+import { useDocumentTitle } from '@mantine/hooks';
 
 function Blog() {
   const { data: blog_posts } = useBlog();
+  useDocumentTitle('Blog ✨ Ben Maxwell');
 
   return !blog_posts ? (
     <Center>

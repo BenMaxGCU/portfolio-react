@@ -2,6 +2,7 @@ import { Center, Grid, Image, Text, Title } from '@mantine/core';
 
 import CallToAction from '../CallToAction/CallToAction.component';
 import styles from './StudyInfo.module.scss';
+import { useDocumentTitle } from '@mantine/hooks';
 
 type CaseStudyJson = {
   title: string;
@@ -28,6 +29,8 @@ function StudyInfo({
   hideButton,
   childComp,
 }: StudyInfoProps) {
+  useDocumentTitle(`${data?.title} ✨ Ben Maxwell`);
+
   return (
     <>
       <div className={styles.container}>
