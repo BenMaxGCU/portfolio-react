@@ -7,6 +7,9 @@ import vitePluginRequire from 'vite-plugin-require';
 export default defineConfig({
   plugins: [react(), viteTsconfigPaths(), svgrPlugin(), vitePluginRequire()],
   assetsInclude: ['**/*.docx'],
+  build: {
+    outDir: 'build',
+  },
   server: {
     open: true,
   },
