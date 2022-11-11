@@ -10,6 +10,7 @@ import StudyInfo from '../../components/StudyInfo/StudyInfo.component';
 import getFileUrl from '../../components/CaseStudies/apiHooks/getFileUrl';
 import useBlog from '../../components/Blog/apiHooks/useBlog';
 import useCaseStudies from '../../components/CaseStudies/apiHooks/useCaseStudies';
+import NotFound from '../../components/NotFound/NotFound.component';
 
 function Main() {
   const { data: caseStudies } = useCaseStudies();
@@ -22,6 +23,7 @@ function Main() {
     </Center>
   ) : (
     <Routes>
+      <Route path="*" element={<NotFound />} />
       <Route path="/" element={<Home />} />
       <Route path="/case-studies" element={<CaseStudies />} />
       <Route path="/blog" element={<Blog />} />
