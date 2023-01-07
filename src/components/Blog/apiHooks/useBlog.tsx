@@ -1,4 +1,5 @@
 import Pocketbase, { Record } from 'pocketbase';
+
 import { useQuery } from 'react-query';
 
 export interface Post {
@@ -13,7 +14,9 @@ export interface Post {
 
 const allBlogPosts = async (): Promise<Post[] | Record[]> => {
   const client = new Pocketbase('https://portfolio-pb.fly.dev');
-  return await client.records.getFullList('blog_posts', 200, {});
+  return await client.records.getFullList('blog_posts', 200, {
+    sort: '-created',
+  });
 };
 
 const useBlog = () => {
