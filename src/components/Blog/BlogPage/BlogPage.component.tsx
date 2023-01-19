@@ -11,7 +11,6 @@ import ReactMarkdown from 'react-markdown';
 import styles from './BlogPage.module.scss';
 import { useDocumentTitle } from '@mantine/hooks';
 import rehypeRaw from 'rehype-raw';
-import rehypeSanitize from 'rehype-sanitize';
 
 type BlogPageProps = {
   image?: string;
@@ -44,7 +43,7 @@ function BlogPage({ image, title, markdown }: BlogPageProps) {
         <Image radius={'md'} src={image} imageProps={{ loading: 'lazy' }} />
       )}
       <ReactMarkdown
-        rehypePlugins={[rehypeRaw, rehypeSanitize]}
+        rehypePlugins={[rehypeRaw]}
         components={{
           a: ExternalLink,
           code({ node, inline, className, children, ...props }) {
