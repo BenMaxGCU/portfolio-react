@@ -11,6 +11,7 @@ import {
   useHotkeys,
 } from '@mantine/hooks';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { HelmetProvider } from 'react-helmet-async';
 
 function App() {
   // State
@@ -42,7 +43,9 @@ function App() {
           withGlobalStyles
           withNormalizeCSS
         >
-          <Layout />
+          <HelmetProvider>
+            <Layout />
+          </HelmetProvider>
         </MantineProvider>
       </ColorSchemeProvider>
     </QueryClientProvider>

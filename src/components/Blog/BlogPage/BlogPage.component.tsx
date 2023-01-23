@@ -11,10 +11,12 @@ import ReactMarkdown from 'react-markdown';
 import styles from './BlogPage.module.scss';
 import { useDocumentTitle } from '@mantine/hooks';
 import rehypeRaw from 'rehype-raw';
+import { Helmet } from 'react-helmet-async';
 
 type BlogPageProps = {
   image?: string;
   title: string;
+  routerLink: string;
   markdown: string;
 };
 
@@ -26,7 +28,7 @@ function ExternalLink(props: any) {
   );
 }
 
-function BlogPage({ image, title, markdown }: BlogPageProps) {
+function BlogPage({ image, title, routerLink, markdown }: BlogPageProps) {
   const { colorScheme } = useMantineColorScheme();
   const lightColourScheme = colorScheme === 'light';
   useDocumentTitle(`${title} ✨ Ben Maxwell`);
@@ -39,6 +41,20 @@ function BlogPage({ image, title, markdown }: BlogPageProps) {
     <Container
       className={lightColourScheme ? styles['page--light'] : styles.page}
     >
+      <Helmet>
+        <meta name="description" content={title} />
+
+        <meta property="og:title" content={title} />
+        <meta property="og:image" content={image} />
+        <meta
+          property="og:url"
+          content={`https://www.benmaxwell.dev/blog/${routerLink}`}
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={image} />
+        <meta name="twitter:title" content={title} />
+      </Helmet>
       {image && (
         <Image radius={'md'} src={image} imageProps={{ loading: 'lazy' }} />
       )}

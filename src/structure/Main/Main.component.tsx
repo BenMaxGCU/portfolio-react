@@ -75,6 +75,7 @@ function Main() {
                 <BlogPage
                   image={getFileUrl(post, post.coverImg)}
                   title={post.title}
+                  routerLink={post.routerLink}
                   markdown={post.markdownText}
                 />
               }
