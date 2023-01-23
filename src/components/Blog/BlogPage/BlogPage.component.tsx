@@ -16,7 +16,7 @@ import { Helmet } from 'react-helmet-async';
 type BlogPageProps = {
   image?: string;
   title: string;
-  routerLink: string;
+  routerId: string;
   markdown: string;
 };
 
@@ -28,7 +28,7 @@ function ExternalLink(props: any) {
   );
 }
 
-function BlogPage({ image, title, routerLink, markdown }: BlogPageProps) {
+function BlogPage({ image, title, routerId, markdown }: BlogPageProps) {
   const { colorScheme } = useMantineColorScheme();
   const lightColourScheme = colorScheme === 'light';
   useDocumentTitle(`${title} ✨ Ben Maxwell`);
@@ -48,7 +48,7 @@ function BlogPage({ image, title, routerLink, markdown }: BlogPageProps) {
         <meta property="og:image" content={image} />
         <meta
           property="og:url"
-          content={`https://www.benmaxwell.dev/blog/${routerLink}`}
+          content={`https://www.benmaxwell.dev/blog/${routerId}`}
         />
 
         <meta name="twitter:card" content="summary_large_image" />
